@@ -6,18 +6,16 @@ The code is in two parts to allow the creation of the data and the load of the d
 
 ## Create CSVs
 
-The createcsv.py program will create data for loading into the case and action service.
+The createcsvs.py program will create data for loading into the case and action service.
 
-Case schema
+## Case schema
+casegroup.csv
 
 case.csv
 
-casegroup.csv
+caseevent.csv
 
-caseevents.csv
-
-Action schema
-
+## Action schema
 actionplan.csv
 
 actionrule.csv
