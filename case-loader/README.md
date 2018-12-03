@@ -28,22 +28,31 @@ The number of cases to be generated can be configured by changing the value of t
 One action plan is created with one rule to create initial contact letters with a handler of printer. The rule is set to run one hour from file creation time. This can be configured by changing the future_time variable within the code.
 
 # Load Data
-The loadcases.py program will load the CSVs created into the relevant Postgres tables. The data in the tables is cleared before the new data is loaded.
+The loadcases.py program will load the CSVs created into the relevant Postgres tables. The tables to be loaded are cleared before the new data is loaded.
 
 NOTE: No IACs will be created as the case delivery queue is bypassed.
 
-## Setting up the python environment
+## Setting up the python environment (if not previously installed)
 ```
 brew install pyenv
-pyenv install
-pip install --upgrade pip setuptools pipenv
-pipenv install --dev
+brew install pipenv
+pipenv install 
 pip3 install psycopg2
 ```
 
 ## Running the procedures
 
-To test the script locally you must have the relevant RM services running
+To test the script locally you must have the relevant RM services running. 
+
+### Clear data within Postgres
+If services are running or have previously been run any previously created actions need to be removed before proceeding. 
+
+```
+truncate action.action cascade
+```
+
+### Execute the procedures
+Navigate to the directory where the code resides.
 ```
 pipenv shell
 python createcsvs.py
