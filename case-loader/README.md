@@ -48,7 +48,8 @@ To test the script locally you must have the relevant RM services running.
 If services are running or have previously been run any previously created actions need to be removed before proceeding. 
 
 ```
-truncate action.action cascade
+truncate action.action cascade;
+truncate action.case cascade;
 ```
 
 ### Execute the procedures
