@@ -50,6 +50,7 @@ If services are running or have previously been run any previously created actio
 ```
 truncate action.action cascade;
 truncate action.case cascade;
+truncate action.actionplanjob cascade;
 ```
 
 ### Execute the procedures
